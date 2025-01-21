@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 18: Thực hành tổng hợp thiết kế trang web</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f0f0f0;
+        }
+
+        header {
+            background-color: #00796b;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            border-bottom: 5px solid #004d40;
+        }
+
+        nav {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2 {
+            color: #333;
+        }
+
+        .content-section {
+            margin-bottom: 30px;
+        }
+
+        .example {
+            padding: 15px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+        }
+
+        footer {
+            background-color: #00796b;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+            font-size: 0.9em;
+        }
+
+        code {
+            background-color: #e0f7fa;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+
+        .home-button {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 15px;
+            background-color: #004d40;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .home-button:hover {
+            background-color: #00332e;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Bài 18: Thực hành tổng hợp thiết kế trang web</h1>
+    </header>
+
+    <nav>
+        <a href="#form-design">Tạo biểu mẫu đăng kí</a>
+        <a href="#hover-effect">Hiệu ứng hover</a>
+        <a href="#new-design">Thiết kế mới</a>
+    </nav>
+
+    <main>
+        <section id="form-design" class="content-section">
+            <h2>Luyện tập 1: Tạo trang đăng kí</h2>
+            <p><strong>Lời giải:</strong></p>
+            <ol>
+                <li>Tạo tệp <code>dang_ki.html</code> chứa biểu mẫu đăng kí câu lạc bộ.</li>
+                <li>Ví dụ mã HTML cho biểu mẫu:</li>
+                <div class="example">
+                    <code>
+&lt;form action="/submit_form" method="POST"&gt;<br>
+  &lt;label for="name"&gt;Họ và tên:&lt;/label&gt;<br>
+  &lt;input type="text" id="name" name="name" required&gt;&lt;br&gt;<br>
+  &lt;label for="email"&gt;Email:&lt;/label&gt;<br>
+  &lt;input type="email" id="email" name="email" required&gt;&lt;br&gt;<br>
+  &lt;label for="club"&gt;Câu lạc bộ muốn tham gia:&lt;/label&gt;<br>
+  &lt;select id="club" name="club"&gt;<br>
+    &lt;option value="tech"&gt;Công nghệ&lt;/option&gt;<br>
+    &lt;option value="art"&gt;Nghệ thuật&lt;/option&gt;<br>
+    &lt;option value="sports"&gt;Thể thao&lt;/option&gt;<br>
+  &lt;/select&gt;&lt;br&gt;<br>
+  &lt;button type="submit"&gt;Đăng kí&lt;/button&gt;<br>
+&lt;/form&gt;
+                    </code>
+                </div>
+            </ol>
+        </section>
+
+        <section id="hover-effect" class="content-section">
+            <h2>Luyện tập 2: Hiệu ứng hover</h2>
+            <p><strong>Lời giải:</strong></p>
+            <div class="example">
+                <code>
+/* Thay đổi màu chữ khi di chuột qua */<br>
+.nav a:hover {<br>
+    color: #ff5722;<br>
+}<br>
+<br>
+/* Thay đổi màu nền và viền khi di chuột qua các nút */<br>
+button:hover {<br>
+    background-color: #ff5722;<br>
+    border: 1px solid #e64a19;<br>
+}
+                </code>
+            </div>
+        </section>
+
+        <section id="new-design" class="content-section">
+            <h2>Vận dụng: Thiết kế mới</h2>
+            <p><strong>Lời giải:</strong></p>
+            <p>Tạo tệp <code>style.css</code> với thiết kế mới:</p>
+            <div class="example">
+                <code>
+/* Định dạng banner */<br>
+.banner {<br>
+    background: url("../assets/img/bg-masthead.jpg") no-repeat center center;<br>
+    background-size: cover;<br>
+    padding: 12rem 0;<br>
+    text-align: center;<br>
+    color: darkred;<br>
+}<br>
+<br>
+/* Định dạng slogan */<br>
+.slogan {<br>
+    background-color: rgb(248, 249, 250);<br>
+    text-align: center;<br>
+    padding: 7rem 3rem;<br>
+}<br>
+<br>
+/* Định dạng khối */<br>
+.row {<br>
+    display: flex;<br>
+    flex-wrap: wrap;<br>
+    max-width: 100%;<br>
+    padding: 0 3rem;<br>
+}<br>
+.block_3 {<br>
+    flex: 0 0 33.333%;<br>
+}<br>
+.block_3 h3 {<br>
+    font-size: 24px;<br>
+    font-weight: bold;<br>
+}<br>
+.text-content {<br>
+    font-size: 16px;<br>
+    color: #333;<br>
+}
+                </code>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Bài 18: Thực hành tổng hợp thiết kế trang web. All rights reserved.</p>
+    </footer>
+  <a href="https://uyenthao-robot.github.io/websitenhom5/" class="home-button">HOME</a>
+</body>
+</html>
